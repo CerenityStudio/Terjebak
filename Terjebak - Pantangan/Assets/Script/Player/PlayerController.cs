@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public void MoveRight()
     {
         transform.localScale = Vector3.one;
+
     }
 
     public void MoveLeft()
