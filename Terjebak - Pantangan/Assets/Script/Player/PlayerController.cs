@@ -4,52 +4,77 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D body;
-    [SerializeField] private float playerSpeed;
-    private Animator anim;
-    private bool grounded;
+    [SerializeField] private float moveSpeed = 140f;
 
-    private void Awake()
-    {
-        body = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
-    }
+    private Rigidbody2D rb;
+    private Animator anim;
+    private bool moveLeft, moveRight, isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        moveLeft = false;
+        moveRight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //body.velocity = new Vector2;
-    }
+        if (moveLeft)
+        {
+            rb.velocity = new Vector2(-moveSpeed, 0f);
+        }
 
-    public void MoveRight()
-    {
-        transform.localScale = Vector3.one;
+        if (moveRight)
+        {
+            rb.velocity = new Vector2(moveSpeed, 0f);
+        }
 
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     public void MoveLeft()
     {
-        transform.localScale = new Vector3(-1, 1, 1);
+        moveLeft = true;
+        anim.SetBool("isRunning", true);
+        gameObject.transform.localScale = new Vector3(-1, 1, 1);
+    }
+
+    public void MoveRight()
+    {
+        moveRight = true;
+        anim.SetBool("isRunning", true);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    public void StopMoving()
+    {
+        moveLeft = false;
+        moveRight = false;
+        rb.velocity = Vector2.zero;
+        anim.SetBool("isRunning", false);
     }
 
     public void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, playerSpeed);
-        //anim.SetTrigger("isJump");
-        grounded = false;
+        if (rb.velocity.y == 0)
+        {
+            //Debug.Log("Lompat!");
+            rb.AddForce(Vector2.up * 700f);
+            //rb.velocity = new Vector2(rb.velocity.x, moveSpeed);
+            anim.SetTrigger("isJump");
+            isGrounded = false;
+            
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
-            grounded = true;
+            isGrounded = true;
         }
     }
 }
