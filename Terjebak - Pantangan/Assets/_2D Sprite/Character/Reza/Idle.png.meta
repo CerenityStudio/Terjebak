@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0dcfcefc0f63654aa2b999541bc3094
+guid: ba06ce8e0a2305f4985978166ca6863f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -120,7 +120,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 530
+        width: 532
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,9 +139,9 @@ TextureImporter:
       name: Idle_1
       rect:
         serializedVersion: 2
-        x: 635
+        x: 735
         y: 0
-        width: 531
+        width: 533
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       name: Idle_2
       rect:
         serializedVersion: 2
-        x: 1327
+        x: 1472
         y: 0
-        width: 532
+        width: 533
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,9 +181,9 @@ TextureImporter:
       name: Idle_3
       rect:
         serializedVersion: 2
-        x: 1986
+        x: 2209
         y: 0
-        width: 530
+        width: 531
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
