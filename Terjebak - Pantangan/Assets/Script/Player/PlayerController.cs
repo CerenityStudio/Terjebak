@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Lompat!");
             rb.AddForce(Vector2.up * 700f);
             //rb.velocity = new Vector2(rb.velocity.x, moveSpeed);
-            anim.SetTrigger("isJump");
+            anim.SetTrigger("Jump");
             isGrounded = false;
             
         }

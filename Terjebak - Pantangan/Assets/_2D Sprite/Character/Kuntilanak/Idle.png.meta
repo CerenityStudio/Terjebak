@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76c3ae65afccba3499747bd967042fed
+guid: da2850be8bcd60848a0e83e8db37acfa
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +120,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 662
+        width: 664
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,9 +139,9 @@ TextureImporter:
       name: Idle_1
       rect:
         serializedVersion: 2
-        x: 894
+        x: 971
         y: 0
-        width: 664
+        width: 680
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       name: Idle_2
       rect:
         serializedVersion: 2
-        x: 1826
+        x: 1964
         y: 0
-        width: 664
+        width: 670
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -181,9 +181,9 @@ TextureImporter:
       name: Idle_3
       rect:
         serializedVersion: 2
-        x: 2723
+        x: 2941
         y: 0
-        width: 662
+        width: 668
         height: 702
       alignment: 0
       pivot: {x: 0, y: 0}

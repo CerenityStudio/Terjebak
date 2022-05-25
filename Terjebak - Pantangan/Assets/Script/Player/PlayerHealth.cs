@@ -36,13 +36,13 @@ public class PlayerHealth : MonoBehaviour
         {
             hurtSfx();
             //currHealth -= _damage;
-            anim.SetTrigger("isStun");
+            anim.SetTrigger("Stun");
         }
         else
         {
             //UIManager.instance.GameOver();
             //darah habis
-            anim.SetTrigger("isDie");
+            anim.SetTrigger("Die");
             GetComponent<PlayerController>().enabled = false;
         }
     }
