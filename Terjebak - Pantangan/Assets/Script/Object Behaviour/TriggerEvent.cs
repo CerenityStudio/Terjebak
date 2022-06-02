@@ -10,13 +10,11 @@ public class TriggerEvent : MonoBehaviour
     public UnityEvent OnTrigger;
     public UnityEvent<GameObject> OnTriggerWithGameObject;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -24,7 +22,7 @@ public class TriggerEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Target tag: " + targetTag + ", collision tag: " + collision.tag);
+        Debug.Log("Target tag: " + targetTag + ", Collision tag: " + collision.tag);
         if(collision.tag == targetTag)
         {
             OnTrigger?.Invoke();

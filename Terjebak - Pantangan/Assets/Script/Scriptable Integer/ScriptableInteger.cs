@@ -21,6 +21,4 @@ public class ScriptableInteger : ScriptableObject
     {
         value = defaultValue;
     }
-
-    //
 }

@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public float currHealth { get; private set; }
     private Animator anim;
 
-    // Start is called before the first frame update
     void Awake()
     {
         currHealth = startingHealth;
@@ -16,32 +15,27 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Current Health: " + currHealth);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TakeDamage(1);
-            Debug.Log("DevMode: Press E for Taking Damage!");
+            Debug.Log("DevMode: Press 1 for Player Taking Damage!");
         }
     }
 
     public void TakeDamage(float _damage)
     {
-        /* menentukan max dan min
-        min 0 max health awal */
         currHealth = Mathf.Clamp(currHealth - _damage, 0, startingHealth);
 
         if (currHealth > 0)
         {
-            hurtSfx();
-            //currHealth -= _damage;
+            //SoundManager.instance.playHurtSfx();
             anim.SetTrigger("Stun");
         }
         else
         {
             //UIManager.instance.GameOver();
-            //darah habis
             anim.SetTrigger("Die");
             GetComponent<PlayerController>().enabled = false;
         }
@@ -50,10 +44,5 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(float _value)
     {
         currHealth = Mathf.Clamp(currHealth + _value, 0, startingHealth);
-    }
-
-    public void hurtSfx()
-    {
-        //SoundManager.instance.playHurtSfx();
     }
 }

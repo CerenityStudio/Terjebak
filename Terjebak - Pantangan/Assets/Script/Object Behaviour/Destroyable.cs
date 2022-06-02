@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Destroyable : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
-
     public void DestroyObject()
     {
         Destroy(gameObject);
