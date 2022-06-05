@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currHealth = startingHealth;
         anim = GetComponent<Animator>();
-        Debug.Log("Current Health: " + currHealth);
+        //Debug.Log("Current Health: " + currHealth);
     }
 
     void Update()

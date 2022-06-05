@@ -35,6 +35,12 @@ public class Projectile : MonoBehaviour
             Debug.Log("Enemy Hit by batu!");
             collision.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Enemy Hit by batu!");
+            collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

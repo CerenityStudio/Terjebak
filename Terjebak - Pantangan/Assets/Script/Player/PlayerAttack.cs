@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     private Animator anim;
     private PlayerController playerController;
-    private float cooldownTimer = Mathf.Infinity;
 
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] rocks;
@@ -22,9 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void RangedAttack()
     {
-        anim.SetTrigger("Attack");
-        cooldownTimer = 0;
-
+        anim.SetTrigger("RangedAttack");
         rocks[CheckRock()].transform.position = firePoint.position;
         rocks[CheckRock()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
 

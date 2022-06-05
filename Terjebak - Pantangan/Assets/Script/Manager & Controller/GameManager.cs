@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        Debug.Log("Dev Mode Debug! 1. PlayerTakeDamage, 2. EnemyTakeDamage, 3. KuntilanakRangeAttack");
     }
 
     // Start is called before the first frame update
