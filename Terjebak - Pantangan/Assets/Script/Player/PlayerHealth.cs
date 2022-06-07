@@ -7,11 +7,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currHealth { get; private set; }
     private Animator anim;
+    private Rigidbody2D rb;
+
+    public float knockbackForce;
+    public float knockbackForceUp;
 
     void Awake()
     {
         currHealth = startingHealth;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         //Debug.Log("Current Health: " + currHealth);
     }
 
@@ -32,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //SoundManager.instance.playHurtSfx();
             anim.SetTrigger("Stun");
+            Knockback();
         }
         else
         {
@@ -44,5 +50,31 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(float _value)
     {
         currHealth = Mathf.Clamp(currHealth + _value, 0, startingHealth);
+    }
+
+    public void Knockback()
+    {
+        Transform attacker = getDamageSource();
+        Vector2 knockbackDir = new Vector2(transform.position.x - attacker.transform.position.x, 0);
+        rb.velocity = new Vector2(knockbackDir.x, knockbackForceUp) * knockbackForce;
+    }
+
+    public Transform getDamageSource()
+    {
+        GameObject[] DamageSources = GameObject.FindGameObjectsWithTag("Enemy");
+        float closestDistance = Mathf.Infinity;
+        Transform currDamageSource = null;
+
+        foreach (GameObject go in DamageSources)
+        {
+            float currDistance;
+            currDistance = Vector3.Distance(transform.position, go.transform.position);
+            if (currDistance < closestDistance)
+            {
+                closestDistance = currDistance;
+                currDamageSource = go.transform;
+            }
+        }
+        return currDamageSource;
     }
 }
