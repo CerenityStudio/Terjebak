@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject dieParticleEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,5 +13,26 @@ public class EnemyBullet : MonoBehaviour
             collision.GetComponent<PlayerHealth>().TakeDamage(1);
             Debug.Log("Kuntilanak attack hit player!");
         }
+
+        if (collision.gameObject.tag != "Player")
+        {
+            DestroyBullet();
+            Debug.Log("Tidak kena!");
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(4f);
+        DestroyBullet();
+    }
+
+    void DestroyBullet()
+    {
+        if (dieParticleEffect != null)
+        {
+            Instantiate(dieParticleEffect, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }

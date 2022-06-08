@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2842406014161111017}
   - component: {fileID: 2842406014161111014}
   - component: {fileID: 6855735714216399511}
-  - component: {fileID: 8974629466691987690}
   m_Layer: 0
   m_Name: Paku
   m_TagString: Enemy
@@ -163,18 +162,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e71f2f47c15c0f4ab08e90e4ca4e73c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8974629466691987690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2842406014161111010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74a188f045725fa48a590cbee2c72142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dieParticleEffect: {fileID: 5736555029319812093, guid: 85f983132b518114ba3eca2fb5752060, type: 3}

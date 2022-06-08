@@ -6,18 +6,20 @@ using UnityEngine;
 public class AI_Patrol : MonoBehaviour
 {
     [HideInInspector] public bool mustPatrol;
+    private Rigidbody2D rb;
+    private BoxCollider2D boxCol;
     private bool mustFlip;
     private Animator anim;
 
     public float walkSpeed;
-    public Rigidbody2D rb;
     public Transform groundCheckPos;
     public LayerMask groundLayer;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //anim.SetBool("isMoving", false);
+        rb = GetComponent<Rigidbody2D>();
+        boxCol = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -42,13 +44,12 @@ public class AI_Patrol : MonoBehaviour
 
     void Patrol()
     {
-        if (mustFlip)
+        if (mustFlip || boxCol.IsTouchingLayers(groundLayer))
         {
             Flip();
         }
 
         rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, rb.velocity.y);
-        //anim.SetBool("isMoving", true);
     }
 
     void Flip()
