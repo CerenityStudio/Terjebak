@@ -21,7 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/_Main Scene.unity
     guid: 3af439040d7f22c459fb57bdfe8b6b34
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   - enabled: 0
     path: Assets/Scenes/_Development Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
