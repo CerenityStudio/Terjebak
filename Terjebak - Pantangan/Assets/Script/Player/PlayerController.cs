@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool moveLeft, moveRight, isGrounded;
 
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
         moveLeft = false;
         moveRight = false;
     }
