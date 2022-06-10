@@ -49,12 +49,13 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Batu destroyed!");
             anim.SetTrigger("Shattered");
+            Destroy(gameObject);
         }
     }
 
     public void SetDirection (float projectile_direction)
     {
-        projectile_lifetime = 0;
+        projectile_lifetime = 5;
         direction = projectile_direction;
 
         gameObject.SetActive(true);

@@ -7,7 +7,8 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] private float range, distanceCollider;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject nail;
-    [SerializeField] private BoxCollider2D boxCollider;
+    
+    [HideInInspector] public BoxCollider2D boxCollider;
 
     private Animator anim;
     public float shootSpeed;
@@ -17,7 +18,7 @@ public class EnemyRangedAttack : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -49,6 +50,7 @@ public class EnemyRangedAttack : MonoBehaviour
     IEnumerator Shoot()
     {
         anim.SetTrigger("RangeAttack");
+        SoundManager.instance.KuntilanakAttackSFX();
 
         int direction()
         {

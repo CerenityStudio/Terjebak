@@ -35,13 +35,12 @@ public class PlayerHealth : MonoBehaviour
 
         if (currHealth > 0)
         {
-            //SoundManager.instance.playHurtSfx();
             anim.SetTrigger("Stun");
             Knockback();
         }
         else
         {
-            //UIManager.instance.GameOver();
+            SoundManager.instance.PlayerDeathSFX();
             anim.SetTrigger("Die");
             GetComponent<PlayerController>().enabled = false;
         }

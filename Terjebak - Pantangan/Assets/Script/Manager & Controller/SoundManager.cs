@@ -9,8 +9,10 @@ public class SoundManager : MonoBehaviour
     private AudioSource audios;
 
     [Header("Audio Clip SFX")]
-    public AudioClip jump;
-    public AudioClip playerDeath;
+    public AudioClip playerJump;
+    public AudioClip playerDie;
+
+    public AudioClip kuntilanakAttack;
 
     private void Awake()
     {
@@ -25,15 +27,18 @@ public class SoundManager : MonoBehaviour
         audios = GetComponent<AudioSource>();
     }
 
-    public void JumpSFX()
+    public void PlayerJumpSFX()
     {
-        audios.PlayOneShot(jump);
+        audios.PlayOneShot(playerJump);
     }
 
     public void PlayerDeathSFX()
     {
-        audios.PlayOneShot(playerDeath);
+        audios.PlayOneShot(playerDie);
     }
 
-
+    public void KuntilanakAttackSFX()
+    {
+        audios.PlayOneShot(kuntilanakAttack);
+    }
 }

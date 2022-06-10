@@ -8,10 +8,14 @@ public class EnemyHealth : MonoBehaviour
     public float currHealth { get; private set; }
     private Animator anim;
 
+    private AudioSource audioSfx;
+    public AudioClip enemydie;
+
     private void Awake()
     {
         currHealth = startingHealth;
         anim = GetComponent<Animator>();
+        audioSfx = GetComponent<AudioSource>();
         Debug.Log("Current Health: " + currHealth);
     }
 
@@ -35,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             //UI Game Complete here
+            EnemyDieSFX();
             anim.SetTrigger("Die");
         }
     }
@@ -42,5 +47,10 @@ public class EnemyHealth : MonoBehaviour
     public void AddHealth(float _value)
     {
         currHealth = Mathf.Clamp(currHealth + _value, 0, startingHealth);
+    }
+
+    private void EnemyDieSFX()
+    {
+        audioSfx.PlayOneShot(enemydie);
     }
 }
