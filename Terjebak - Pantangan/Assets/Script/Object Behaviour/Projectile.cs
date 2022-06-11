@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Batu destroyed!");
             anim.SetTrigger("Shattered");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
