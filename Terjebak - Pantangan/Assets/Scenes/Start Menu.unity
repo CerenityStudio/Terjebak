@@ -432,7 +432,7 @@ RectTransform:
   m_GameObject: {fileID: 429486620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.93045855, y: 0.85559434, z: 0.9304589}
+  m_LocalScale: {x: 1.2392844, y: 1.1395719, z: 1.2392848}
   m_Children:
   - {fileID: 831011129}
   m_Father: {fileID: 1476514977}
@@ -440,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259.0299, y: -300.5789}
+  m_AnchoredPosition: {x: 259.03006, y: -300.57883}
   m_SizeDelta: {x: 305.90674, y: 305.588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429486622
@@ -1337,7 +1337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1056072972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1460,8 +1460,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1100473545}
   - component: {fileID: 1100473544}
+  - component: {fileID: 1100473546}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Backsound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,6 +1578,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100473546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100473543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbe0947f58285d4c8054ed968621c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1263502009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,9 +2523,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476514976}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3300349, y: 0.35891294, z: 0.3300349}
+  m_LocalScale: {x: 0.3300349, y: 0.35891297, z: 0.33003494}
   m_Children:
   - {fileID: 429486621}
   m_Father: {fileID: 758764745}
@@ -2520,7 +2533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 236, y: -61}
+  m_AnchoredPosition: {x: 235.99997, y: -61}
   m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476514978
@@ -3084,7 +3097,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124161262}
+        m_TargetAssemblyTypeName: SoundScript, Assembly-CSharp
+        m_MethodName: PauseMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1808817740
 GameObject:
@@ -3758,6 +3783,7 @@ GameObject:
   - component: {fileID: 2124161259}
   - component: {fileID: 2124161261}
   - component: {fileID: 2124161260}
+  - component: {fileID: 2124161262}
   m_Layer: 5
   m_Name: musik
   m_TagString: Untagged
@@ -3782,7 +3808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.2, y: 22.3}
+  m_AnchoredPosition: {x: -14.4, y: 11.1}
   m_SizeDelta: {x: 630.1006, y: 165.76495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124161260
@@ -3827,3 +3853,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124161258}
   m_CullTransparentMesh: 1
+--- !u!114 &2124161262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124161258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d0f437e3cb11947a554164a5bb7f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicToggleButton: {fileID: 0}
+  toggler: {fileID: 0}
