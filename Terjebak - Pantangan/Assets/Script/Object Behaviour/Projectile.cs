@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
+        //lifetime projectile
         projectile_lifetime += Time.deltaTime;
         if (projectile_lifetime > 5) gameObject.SetActive(false);
     }
@@ -36,11 +37,11 @@ public class Projectile : MonoBehaviour
             collision.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
 
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Enemy Hit by batu!");
-            collision.GetComponent<PlayerHealth>().TakeDamage(damage);
-        }
+        //if (collision.gameObject.tag == "Player")
+        //{
+        //    Debug.Log("Enemy Hit by batu!");
+        //    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,15 +50,16 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Batu destroyed!");
             anim.SetTrigger("Shattered");
-            //Destroy(gameObject);
+            Deactive();
         }
     }
 
-    public void SetDirection (float projectile_direction)
+    public void SetDirection(float projectile_direction)
     {
-        projectile_lifetime = 5;
+        projectile_lifetime = 0;
         direction = projectile_direction;
 
+        //menentukan arah projectile masih ada
         gameObject.SetActive(true);
         hit = false;
         boxCollider.enabled = true;
@@ -67,7 +69,6 @@ public class Projectile : MonoBehaviour
         {
             localScaleX = -localScaleX;
         }
-
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 

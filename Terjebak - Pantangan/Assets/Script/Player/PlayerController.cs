@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 140f;
-
-    private Rigidbody2D rb;
-    private Animator anim;
+    [Header("Editor Windows Setting/Dev Mode")]
+    [SerializeField] private float playerSpeed; 
+    
+    [Header("Android Setting")]
+    [SerializeField] private float moveSpeed;
     private bool moveLeft, moveRight, isGrounded;
+    private Animator anim;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -24,6 +27,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+//#if UNITY_EDITOR_WIN
+//        float horizontal_input = Input.GetAxis("Horizontal");
+//        rb.velocity = new Vector2(horizontal_input * playerSpeed, rb.velocity.y);
+
+//        if (horizontal_input > 0.01f)
+//        {
+//            anim.SetBool("isRunning", true);
+//            transform.localScale = Vector3.one;
+//        }
+//        else if (horizontal_input < -0.01f)
+//        {
+//            anim.SetBool("isRunning", true);
+//            transform.localScale = new Vector3(-1, 1, 1);
+//        }
+
+//        if (Input.GetKeyDown(KeyCode.Space))
+//        {
+//            Jump();
+//        }
+//#endif
+
         if (moveLeft)
         {
             rb.velocity = new Vector2(-moveSpeed, 0f);
@@ -33,7 +57,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, 0f);
         }
-
         anim.SetBool("isGrounded", isGrounded);
     }
 

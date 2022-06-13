@@ -34,13 +34,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (currHealth > 0)
         {
-            anim.SetTrigger("Stun");
+            //anim.SetTrigger("Stun");
         }
         else
         {
             //UI Game Complete here
             EnemyDieSFX();
             anim.SetTrigger("Die");
+            Destroy(gameObject);
         }
     }
 
