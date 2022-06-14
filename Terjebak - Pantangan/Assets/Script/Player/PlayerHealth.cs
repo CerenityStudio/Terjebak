@@ -82,6 +82,6 @@ public class PlayerHealth : MonoBehaviour
         SoundManager.instance.PlayerDeathSFX();
         yield return new WaitForSeconds(2f);
         Time.timeScale = 0f;
-        UIManager.instance.GameOverPanel();
+        MenuUI.instance.GameOverPanel();
     }
 }
