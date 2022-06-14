@@ -15,6 +15,8 @@ public class AI_Patrol : MonoBehaviour
     public Transform groundCheckPos;
     public LayerMask groundLayer;
 
+    //public static AI_Patrol instance;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -58,5 +60,10 @@ public class AI_Patrol : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
         mustPatrol = true;
+    }
+
+    public void DeactivatePatrol()
+    {
+        mustPatrol = false;
     }
 }

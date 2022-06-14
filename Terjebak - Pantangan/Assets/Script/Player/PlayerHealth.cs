@@ -40,9 +40,9 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            SoundManager.instance.PlayerDeathSFX();
             anim.SetTrigger("Die");
             GetComponent<PlayerController>().enabled = false;
+            StartCoroutine(Die());
         }
     }
 
@@ -75,5 +75,13 @@ public class PlayerHealth : MonoBehaviour
             }
         }
         return currDamageSource;
+    }
+
+    IEnumerator Die()
+    {
+        SoundManager.instance.PlayerDeathSFX();
+        yield return new WaitForSeconds(2f);
+        Time.timeScale = 0f;
+        UIManager.instance.GameOverPanel();
     }
 }

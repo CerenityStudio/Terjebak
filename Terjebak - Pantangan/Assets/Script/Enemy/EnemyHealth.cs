@@ -6,10 +6,12 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currHealth { get; private set; }
-    private Animator anim;
-
-    private AudioSource audioSfx;
     public AudioClip enemydie;
+
+    private Animator anim;
+    private BoxCollider2D bc2;
+    private AudioSource audioSfx;
+    
 
     private void Awake()
     {
@@ -39,9 +41,9 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             //UI Game Complete here
-            EnemyDieSFX();
             anim.SetTrigger("Die");
-            Destroy(gameObject);
+            //AI_Patrol.instance.DeactivatePatrol();
+            StartCoroutine(Die());
         }
     }
 
@@ -53,5 +55,12 @@ public class EnemyHealth : MonoBehaviour
     private void EnemyDieSFX()
     {
         audioSfx.PlayOneShot(enemydie);
+    }
+
+    IEnumerator Die()
+    {
+        EnemyDieSFX();
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }
