@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         OpenDoor();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MenuUI.instance.PauseGame();
+        }
     }
 
     internal void StartGame()
@@ -45,6 +50,7 @@ public class GameManager : MonoBehaviour
     {
         coins.reset();
         keys.reset();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("_Main Scene");
     }
 
@@ -67,8 +73,8 @@ public class GameManager : MonoBehaviour
     {
         if (keys.value == 4)
         {
-            Debug.Log("Door Open");
             door.SetActive(true);
+            //Debug.Log("Door Open");
         }
     }
 

@@ -33,12 +33,10 @@ public class PlayerController : MonoBehaviour
 
 //        if (horizontal_input > 0.01f)
 //        {
-//            anim.SetBool("isRunning", true);
 //            transform.localScale = Vector3.one;
 //        }
 //        else if (horizontal_input < -0.01f)
 //        {
-//            anim.SetBool("isRunning", true);
 //            transform.localScale = new Vector3(-1, 1, 1);
 //        }
 
@@ -46,6 +44,9 @@ public class PlayerController : MonoBehaviour
 //        {
 //            Jump();
 //        }
+
+//        anim.SetBool("isRunning", horizontal_input != 0);
+//        anim.SetBool("isGrounded", isGrounded);
 //#endif
 
         if (moveLeft)
@@ -81,7 +82,6 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         anim.SetBool("isRunning", false);
     }
-
     public void Jump()
     {
         if (rb.velocity.y == 0)
