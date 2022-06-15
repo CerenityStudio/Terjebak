@@ -27,6 +27,6 @@ public class TriggerEvent : MonoBehaviour
         {
             OnTrigger?.Invoke();
             OnTriggerWithGameObject?.Invoke(collision.gameObject);
-;       }
+;        }
     }
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,11 +33,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         OpenDoor();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            MenuUI.instance.PauseGame();
-        }
     }
 
     internal void StartGame()
@@ -50,37 +44,24 @@ public class GameManager : MonoBehaviour
     {
         coins.reset();
         keys.reset();
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("_Main Scene");
     }
 
-    internal void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0f;
     }
 
-    internal void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
-    }
-
-    internal void GameComplete()
-    {
-        StartCoroutine(GameCompletes());
     }
 
     private void OpenDoor()
     {
         if (keys.value == 4)
         {
+            Debug.Log("Door Open");
             door.SetActive(true);
-            //Debug.Log("Door Open");
         }
-    }
-
-    IEnumerator GameCompletes()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Ending Scene");
     }
 }

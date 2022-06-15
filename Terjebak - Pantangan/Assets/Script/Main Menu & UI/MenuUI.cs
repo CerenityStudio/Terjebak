@@ -8,8 +8,8 @@ public class MenuUI : MonoBehaviour
 {
     public static MenuUI instance;
 
-    public GameObject mainMenuPanel;
     public GameObject hudCanvas;
+    public GameObject mainMenuPanel;
     public GameObject pauseMenuPanel;
     public GameObject gameOverMenuPanel;
 
@@ -23,19 +23,6 @@ public class MenuUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        Deactive();
-    }
-
-    private void Deactive()
-    {
-        mainMenuPanel.SetActive(true);
-        hudCanvas.SetActive(false);
-        pauseMenuPanel.SetActive(false);
-        gameOverMenuPanel.SetActive(false);
     }
 
     public void StartGame()
@@ -70,7 +57,9 @@ public class MenuUI : MonoBehaviour
         gameOverMenuPanel.SetActive(false);
         hudCanvas.SetActive(true);
         GameManager.instance.Retry();
+        SceneManager.LoadScene("_Main Scene");
     }
+
     public void ExitGame()
     {
         Application.Quit();
