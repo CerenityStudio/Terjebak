@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637904441214688240
+      ticks: 637909016245472034
     m_Hash: 2153984758
   m_LockFileStatus:
     m_FilePath: C:/Users/Acer/OneDrive/Documents/GitHub/capstone-project-24/Terjebak
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637904441214698464
+      ticks: 637909016245482032
     m_Hash: 3114826495
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -136,6 +136,7 @@ m_PackageAssets:
         - 8.0.1
         - 8.0.2
         - 9.0.0-pre.1
+        - 9.0.0-pre.3
         compatible:
         - 5.1.0
         - 5.1.1
@@ -353,6 +354,7 @@ m_PackageAssets:
         - 7.0.0
         - 7.0.1
         - 8.0.0-pre.1
+        - 8.0.0-pre.3
         compatible:
         - 4.2.0
         - 4.3.0
