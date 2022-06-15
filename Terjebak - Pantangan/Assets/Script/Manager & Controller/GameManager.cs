@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,16 +45,22 @@ public class GameManager : MonoBehaviour
     {
         coins.reset();
         keys.reset();
+        SceneManager.LoadScene("_Main Scene");
     }
 
-    public void PauseGame()
+    internal void PauseGame()
     {
         Time.timeScale = 0f;
     }
 
-    public void ResumeGame()
+    internal void ResumeGame()
     {
         Time.timeScale = 1f;
+    }
+
+    internal void GameComplete()
+    {
+        StartCoroutine(GameCompletes());
     }
 
     private void OpenDoor()
@@ -63,5 +70,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("Door Open");
             door.SetActive(true);
         }
+    }
+
+    IEnumerator GameCompletes()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Ending Scene");
     }
 }
