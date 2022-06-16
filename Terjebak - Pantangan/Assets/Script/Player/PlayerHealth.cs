@@ -22,11 +22,13 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR_WIN
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TakeDamage(1);
             //Debug.Log("DevMode: Press 1 for Player Taking Damage!");
         }
+#endif
     }
 
     public void TakeDamage(float _damage)

@@ -23,7 +23,8 @@ public class EnemyBullet : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
         DestroyBullet();
     }
 
@@ -33,6 +34,6 @@ public class EnemyBullet : MonoBehaviour
         {
             Instantiate(dieParticleEffect, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
+        StartCoroutine(Timer());
     }
 }

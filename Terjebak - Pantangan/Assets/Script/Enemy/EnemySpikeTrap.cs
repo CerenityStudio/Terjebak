@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemySpikeTrap : MonoBehaviour
 {
-    Rigidbody2D rb;
-    BoxCollider2D boxCollider2D;
     public float distance;
-    bool isFalling = false;
 
+    private bool isFalling = false;
+    private Rigidbody2D rb;
+    private BoxCollider2D boxCollider2D;
 
     private void Start()
     {
@@ -16,10 +16,10 @@ public class EnemySpikeTrap : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
-    
     private void Update()
     {
         Physics2D.queriesStartInColliders = false;
+
         if(isFalling == false)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance);
@@ -39,11 +39,12 @@ public class EnemySpikeTrap : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
-        else
+
+        if (other.gameObject.tag == "Ground")
         {
             rb.gravityScale = 0;
             boxCollider2D.enabled = false;

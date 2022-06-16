@@ -24,9 +24,11 @@ public class Projectile : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
-        //lifetime projectile
         projectile_lifetime += Time.deltaTime;
-        if (projectile_lifetime > 5) gameObject.SetActive(false);
+        if (projectile_lifetime > 2)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,13 +37,8 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Enemy Hit by batu!");
             collision.GetComponent<EnemyHealth>().TakeDamage(damage);
+            Deactive();
         }
-
-        //if (collision.gameObject.tag == "Player")
-        //{
-        //    Debug.Log("Enemy Hit by batu!");
-        //    collision.GetComponent<PlayerHealth>().TakeDamage(damage);
-        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

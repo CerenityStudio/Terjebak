@@ -28,11 +28,13 @@ public class EnemyRangedAttack : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR_WIN
         if (Input.GetKeyDown(KeyCode.Alpha3) && !isShooting)
         {
             StartCoroutine(Shoot());
             Debug.Log("DevMode: Press 3 for Enemy Ranged Attack!");
         }
+#endif
 
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * distanceCollider, new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 0, Vector2.left, 0, playerLayer);
         if (hit.collider != null && !isShooting)
