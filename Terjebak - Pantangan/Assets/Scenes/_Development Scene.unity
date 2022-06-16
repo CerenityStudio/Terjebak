@@ -257,7 +257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279494478
 GameObject:
@@ -722,7 +722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &820762782
 GameObject:
@@ -1209,7 +1209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1134338021
 Transform:
   m_ObjectHideFlags: 0
@@ -2194,10 +2194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 2
   firePoint: {fileID: 8959515644050485962}
-  rocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  rocks: []
 --- !u!95 &8959515644264988478
 Animator:
   serializedVersion: 3
