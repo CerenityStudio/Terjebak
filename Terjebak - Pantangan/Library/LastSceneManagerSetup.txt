@@ -1,6 +1,10 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/Start Menu.unity
+=======
+- path: Assets/Scenes/_Development Scene.unity
+>>>>>>> 6f94ccdfa5fe7b857bab47385ad1192e1916c0c1
 =======
 - path: Assets/Scenes/_Development Scene.unity
 >>>>>>> 6f94ccdfa5fe7b857bab47385ad1192e1916c0c1
