@@ -8,21 +8,18 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject nail;
     
-    [HideInInspector] public BoxCollider2D boxCollider;
+    [HideInInspector]
+    public BoxCollider2D boxCollider;
 
     private Animator anim;
     public float shootSpeed;
     public Transform firePoint;
     private bool isShooting;
 
-    private void Awake()
+    void Start()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-    }
-
-    void Start()
-    {
         isShooting = false;
     }
 
@@ -35,12 +32,19 @@ public class EnemyRangedAttack : MonoBehaviour
             Debug.Log("DevMode: Press 3 for Enemy Ranged Attack!");
         }
 #endif
+        if (CheckPlayer())
+        {
+            anim.SetTrigger("MeleeAttack");
+        }
+    }
 
+    private bool CheckPlayer()
+    {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * distanceCollider, new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 0, Vector2.left, 0, playerLayer);
         if (hit.collider != null && !isShooting)
-        {
             StartCoroutine(Shoot());
-        }
+
+        return hit.collider != null;
     }
 
     private void OnDrawGizmos()

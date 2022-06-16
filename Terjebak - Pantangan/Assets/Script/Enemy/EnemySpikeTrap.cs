@@ -44,7 +44,8 @@ public class EnemySpikeTrap : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Ground")
+        //if (other.gameObject.tag == "Ground")
+        else
         {
             rb.gravityScale = 0;
             boxCollider2D.enabled = false;

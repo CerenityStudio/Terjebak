@@ -6,6 +6,11 @@ public class EnemyBullet : MonoBehaviour
 {
     public GameObject dieParticleEffect;
 
+    private void Update()
+    {
+        StartCoroutine(Timer());
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -23,9 +28,10 @@ public class EnemyBullet : MonoBehaviour
 
     IEnumerator Timer()
     {
+        DestroyBullet();
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        DestroyBullet();
+        
     }
 
     void DestroyBullet()
@@ -34,6 +40,5 @@ public class EnemyBullet : MonoBehaviour
         {
             Instantiate(dieParticleEffect, transform.position, Quaternion.identity);
         }
-        StartCoroutine(Timer());
     }
 }
