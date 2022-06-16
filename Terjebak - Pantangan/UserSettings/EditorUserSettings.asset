@@ -27,12 +27,29 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c731f171311242b6815332827187df7ee3d2cfb
       flags: 0
     RecentlyUsedScenePath-7:
+<<<<<<< Updated upstream
       value: 22424703114646680e0b0227036c6c0417050c6a012d2825633c133af6f9
+=======
+<<<<<<< HEAD
+      value: 22424703114646680e0b0227036c603413011d2623382b35233d5d00e1e53a3dacf238e0f323
+>>>>>>> Stashed changes
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c603d171e166a1f2b233e2867083debf42d
       flags: 0
     RecentlyUsedScenePath-9:
+<<<<<<< Updated upstream
+=======
+      value: 22424703114646680e0b0227036c6c0417050c6a012d2825633c133af6f9
+=======
+      value: 22424703114646680e0b0227036c6c0417050c6a012d2825633c133af6f9
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 22424703114646680e0b0227036c603d171e166a1f2b233e2867083debf42d
+>>>>>>> 6f94ccdfa5fe7b857bab47385ad1192e1916c0c1
+      flags: 0
+    RecentlyUsedScenePath-9:
+>>>>>>> Stashed changes
       value: 22424703114646680e0b0227036c603413011d2623382b35233d5d00e1e53a3dacf238e0f323
       flags: 0
     UnityRemoteCompression:
