@@ -13,6 +13,8 @@ public class MenuUI : MonoBehaviour
     public GameObject pauseMenuPanel;
     public GameObject gameOverMenuPanel;
 
+    public GameObject timeOverPanel, timeOverScene1, timeOverScene2;
+
     private void Awake()
     {
         if (instance == null)
@@ -23,6 +25,31 @@ public class MenuUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        DeactivePanel();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            TimeOver();
+            Debug.Log("Time's Up! You Lose!");
+        }
+    }
+
+    private void DeactivePanel()
+    {
+        hudCanvas.SetActive(false);
+        mainMenuPanel.SetActive(true);
+        pauseMenuPanel.SetActive(false);
+        gameOverMenuPanel.SetActive(false);
+        timeOverPanel.SetActive(false);
+        timeOverScene1.SetActive(false);
+        timeOverScene2.SetActive(false);
     }
 
     public void StartGame()
@@ -60,8 +87,23 @@ public class MenuUI : MonoBehaviour
         SceneManager.LoadScene("_Main Scene");
     }
 
+    public void TimeOver()
+    {
+        hudCanvas.SetActive(false);
+        StartCoroutine(TimesUp());
+    }
+
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator TimesUp()
+    {
+        timeOverPanel.SetActive(true);
+        timeOverScene1.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        timeOverScene1.SetActive(false);
+        timeOverScene2.SetActive(true);
     }
 }
