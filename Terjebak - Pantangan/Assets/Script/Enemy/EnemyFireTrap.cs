@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyFireTrap : MonoBehaviour
 {
-    Collider2D firecol;
-    
-    void Start()
+    private BoxCollider2D firecol;
+
+    private void Awake()
     {
-        firecol = this.GetComponent<Collider2D> ();
+        firecol = GetComponent<BoxCollider2D>();
     }
 
     public void FireON()

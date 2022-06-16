@@ -34,11 +34,13 @@ public class MenuUI : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR_WIN
         if (Input.GetKeyDown(KeyCode.L))
         {
             TimeOver();
             Debug.Log("Time's Up! You Lose!");
         }
+#endif
     }
 
     private void DeactivePanel()
@@ -84,7 +86,6 @@ public class MenuUI : MonoBehaviour
         gameOverMenuPanel.SetActive(false);
         hudCanvas.SetActive(true);
         GameManager.instance.Retry();
-        SceneManager.LoadScene("_Main Scene");
     }
 
     public void TimeOver()
