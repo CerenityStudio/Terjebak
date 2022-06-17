@@ -6787,7 +6787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6ea5551b1635445aeccae5870dcc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 900
+  timeValue: 600
   timerText: {fileID: 1150088407}
 --- !u!1001 &296485401
 PrefabInstance:
@@ -8605,7 +8605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cf95e3f7835324491faf5f4b661af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
+  startingHealth: 5
   enemydie: {fileID: 8300000, guid: 96dbccbcc0f06074bb1df3bba0be40cc, type: 3}
 --- !u!61 &358885496
 BoxCollider2D:
@@ -21992,7 +21992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mustPatrol: 0
-  walkSpeed: 800
+  walkSpeed: 400
   groundCheckPos: {fileID: 1402781184}
   groundLayer:
     serializedVersion: 2
@@ -22024,7 +22024,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10073471, y: 0.007605672}
+  m_Offset: {x: 0.2090683, y: 0.007605672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22035,7 +22035,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3248367, y: 1.5946479}
+  m_Size: {x: 1.5415039, y: 1.5946479}
   m_EdgeRadius: 0
 --- !u!50 &973407320
 Rigidbody2D:
@@ -29162,7 +29162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cf95e3f7835324491faf5f4b661af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
+  startingHealth: 5
   enemydie: {fileID: 8300000, guid: 96dbccbcc0f06074bb1df3bba0be40cc, type: 3}
 --- !u!61 &1289730982
 BoxCollider2D:
@@ -29758,7 +29758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cf95e3f7835324491faf5f4b661af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
+  startingHealth: 5
   enemydie: {fileID: 8300000, guid: 96dbccbcc0f06074bb1df3bba0be40cc, type: 3}
 --- !u!61 &1316236670
 BoxCollider2D:
@@ -38858,7 +38858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cf95e3f7835324491faf5f4b661af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2
+  startingHealth: 5
   enemydie: {fileID: 8300000, guid: 96dbccbcc0f06074bb1df3bba0be40cc, type: 3}
 --- !u!61 &1803603405
 BoxCollider2D:
