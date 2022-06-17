@@ -18,7 +18,7 @@ public class EnemySpikeTrap : MonoBehaviour
 
     private void Update()
     {
-        Physics2D.queriesStartInColliders = false;
+        //Physics2D.queriesStartInColliders = false;
 
         if(isFalling == false)
         {
