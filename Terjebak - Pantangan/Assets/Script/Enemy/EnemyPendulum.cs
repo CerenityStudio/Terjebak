@@ -18,13 +18,11 @@ public class EnemyPendulum : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rb.angularVelocity = velocityThreshold;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Push();

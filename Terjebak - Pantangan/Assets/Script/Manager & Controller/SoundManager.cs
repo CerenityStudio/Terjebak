@@ -9,10 +9,12 @@ public class SoundManager : MonoBehaviour
     private AudioSource audios;
 
     [Header("Audio Clip SFX")]
+    //public AudioClip bgmGameplay;
     public AudioClip playerJump;
     public AudioClip playerDie;
-
     public AudioClip kuntilanakAttack;
+
+    public GameObject mute, unmute;
 
     private void Awake()
     {
@@ -25,6 +27,17 @@ public class SoundManager : MonoBehaviour
             instance = this;
         }
         audios = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        Deactivated();
+    }
+
+    private void Deactivated()
+    {
+        unmute.SetActive(true);
+        mute.SetActive(false);
     }
 
     public void PlayerJumpSFX()
@@ -40,5 +53,19 @@ public class SoundManager : MonoBehaviour
     public void KuntilanakAttackSFX()
     {
         audios.PlayOneShot(kuntilanakAttack);
+    }
+
+    public void Mute()
+    {
+        unmute.SetActive(false);
+        mute.SetActive(true);
+        AudioListener.pause = true;
+    }
+
+    public void Unmute()
+    {
+        mute.SetActive(false);
+        unmute.SetActive(true);
+        AudioListener.pause = false;
     }
 }

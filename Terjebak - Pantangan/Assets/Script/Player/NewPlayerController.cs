@@ -5,9 +5,9 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class NewPlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float moveSpeed;
-    
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpForce;
+
     private float dirX;
     private bool facingRight = true, isGrounded;
 
@@ -32,7 +32,7 @@ public class NewPlayerController : MonoBehaviour
 
         if (CrossPlatformInputManager.GetButtonDown("Jump") && rb.velocity.y == 0)
         {
-            rb.AddForce(Vector2.up * 700f);
+            rb.AddForce(Vector2.up * jumpForce);
             anim.SetTrigger("Jump");
             isGrounded = false;
             SoundManager.instance.PlayerJumpSFX();
