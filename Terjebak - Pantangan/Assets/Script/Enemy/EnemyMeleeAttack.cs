@@ -7,15 +7,16 @@ public class EnemyMeleeAttack : MonoBehaviour
     [SerializeField] private float attackCooldown, range, distanceCollider;
     [SerializeField] private LayerMask playerLayer;
 
-    public BoxCollider2D boxCollider;
+    [HideInInspector] public BoxCollider2D boxCollider;
     
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
     private PlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -37,9 +38,10 @@ public class EnemyMeleeAttack : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * distanceCollider, new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 0, Vector2.left, 0, playerLayer);
 
         if (hit.collider != null)
+        {
             playerHealth = hit.transform.GetComponent<PlayerHealth>();
             Debug.Log("Hit by enemy");
-
+        }
         return hit.collider != null;
     }
 
