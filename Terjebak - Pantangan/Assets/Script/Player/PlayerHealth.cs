@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TakeDamage(1);
-            //Debug.Log("DevMode: Press 1 for Player Taking Damage!");
+            Debug.Log("DevMode: Press 1 for Player Taking Damage!");
         }
 #endif
     }

@@ -7,7 +7,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     [SerializeField] private float attackCooldown, range, distanceCollider;
     [SerializeField] private LayerMask playerLayer;
 
-    [HideInInspector] public BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
     
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
@@ -16,7 +16,6 @@ public class EnemyMeleeAttack : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
