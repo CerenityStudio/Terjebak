@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             anim.SetTrigger("Die");
-            //GetComponent<PlayerController>().enabled = false;
+            GetComponent<PlayerController>().enabled = false;
             GetComponent<NewPlayerController>().enabled = false;
             StartCoroutine(Die());
         }

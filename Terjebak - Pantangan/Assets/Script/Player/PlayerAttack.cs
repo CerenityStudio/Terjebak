@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
 
 #if UNITY_EDITOR_WIN
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             RangedAttack();
         }

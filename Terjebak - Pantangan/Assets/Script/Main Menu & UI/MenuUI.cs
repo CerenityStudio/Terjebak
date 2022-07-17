@@ -34,13 +34,18 @@ public class MenuUI : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_EDITOR_WIN
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TimeOver();
-            Debug.Log("Time's Up! You Lose!");
+            PauseGame();
         }
-#endif
+
+//#if UNITY_EDITOR_WIN
+//        if (Input.GetKeyDown(KeyCode.L))
+//        {
+//            TimeOver();
+//            Debug.Log("Time's Up! You Lose!");
+//        }
+//#endif
     }
 
     private void DeactivePanel()
